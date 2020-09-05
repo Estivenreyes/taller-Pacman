@@ -1,9 +1,11 @@
+import processing.core.PApplet;
 
-public class Enemy4 {
+public class Enemy4 extends Enemies{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
+	
+	private PApplet app;
 
 }
