@@ -1,9 +1,10 @@
+import processing.core.PApplet;
 
 public class Enemy2 extends Enemies{
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public Enemy2(PApplet app, float poseX, float poseY, float speed, float dirX, float dirY, int kill) {
+		super(app, poseX, poseY, speed, dirX, dirY, kill);
+		
 	}
 
 }

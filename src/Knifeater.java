@@ -1,21 +1,72 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
-public class Knifeater extends Character{
+public class Knifeater {
 	
 	private PApplet app;
+	private PImage knifeater;
+	private float poschX;
+	private float poschY;
+	private int dirX;
+	private int dirY;
+	private boolean eat;
+	private boolean mamadisimo;
 	
-	public Knifeater (PApplet app, float poschX, float poschY, float dirX, boolean atack) {
-		super(atack, atack, dirX, dirX);
+	public Knifeater(float poschX, float poschY, PApplet app) {
+		this.poschX = poschX;
+		this.poschY = poschY;
+		this.dirX = 1;
+		this.dirY = 1;
+		this.eat = false;
+		this.mamadisimo = false;
 		this.app = app;
+		this.knifeater = app.loadImage("./data/Knifeater.png"); 
+
 	}
 	
-	public void pintar () {
-		fill(100,20,0);
-		app.ellipse(poschX, poschY, 88, 88);
+	public void paint() {
+		app.fill(100,20,0);
+		app.image(knifeater,poschX,poschY);
 	}
 	
-	public void atack() {
-		
+	
+	public void move (String direction) {
+		switch(direction) {
+		case "UP":
+			poschY -= 100;
+			System.out.println("funciona");
+		break;
+		case "DOWN":
+			poschY += 100;
+			System.out.println("funciona");
+		break;
+		case "RIGHT":
+			poschX += 100;
+			System.out.println("funciona");
+		break;
+		case "LEFT":
+			poschX -= 100;
+			System.out.println("funciona");
+		break;
+		}
 	}
+
+	public boolean isMamadisimo() {
+		return mamadisimo;
+	}
+
+	public void setMamadisimo(boolean mamadisimo) {
+		this.mamadisimo = mamadisimo;
+	}
+
+	public boolean isEat() {
+		return eat;
+	}
+
+	public void setEat(boolean eat) {
+		this.eat = eat;
+	}
+	
+	
 
 }
