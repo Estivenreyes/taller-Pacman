@@ -57,31 +57,32 @@ public class Main extends PApplet{
 		}
 	}*/
 	int matX =1;
-	int matY =1;
+	int matY =0;
 	
 	public void keyPressed() {
 		matrix = world.getMatrix();
 		switch (keyCode) {
 		case RIGHT:
-			if(matrix[matY][matX+1] == 0 || matrix[matY][matX+1] == 1 ) {
+			if( matX < 8 && (matrix[matY][matX+1] == 0 || matrix[matY][matX+1] == 1)) {
 				knifeman.move("RIGHT");
 				matX++;
+				System.out.println(matX);
 			}
 			break;
 		case LEFT:
-			if(matrix[matY][matX-1] == 0 || matrix[matY][matX-1] == 1) {
+			if(matX > 0 && (matrix[matY][matX-1] == 0 || matrix[matY][matX-1] == 1)) {
 				knifeman.move("LEFT");
 				matX--;
 			}
 			break;
 		case UP:
-			if(matrix[matY-1][matX]== 0 || matrix[matY-1][matX]== 1 ) {
+			if(matY > 0 && (matrix[matY-1][matX]== 0 || matrix[matY-1][matX]== 1) ) {
 				knifeman.move("UP");
 				matY--;
 			}
 			break;
 		case DOWN:
-			if(matrix[matY+1][matX]==0 || matrix[matY+1][matX]==1) {
+			if(matY < 6 && (matrix[matY+1][matX]==0 || matrix[matY+1][matX]==1)) {
 				knifeman.move("DOWN");
 				matY++;
 			}
