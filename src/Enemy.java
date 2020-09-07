@@ -21,6 +21,7 @@ public class Enemy {
 	public void move (int[][] matrix) {
 		if(app.frameCount%speed == 0) {
 			int dir = (int) app.random(4);
+			System.out.println(matrix);
 			switch (dir) {
 			case 0:
 				if( matX < 8 && (matrix[matY][matX+1] == 0 || matrix[matY][matX+1] == 1)) {

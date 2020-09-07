@@ -38,7 +38,7 @@ public class Main extends PApplet{
 		System.out.println(matrix);
 		name = "";
 		enemies.add(new Enemy1(420,420,4,4,this));
-		enemies.add(new Enemy2(711,311,3,7,this));
+		enemies.add(new Enemy2(711,311,7,3,this));
 		enemies.add(new Enemy3(313,514,3,5,this));
 		enemies.add(new Enemy4(713,514,7,5,this));
 	
@@ -67,6 +67,7 @@ public class Main extends PApplet{
 			knifeman.paint();	
 			for(int i = 0; i < enemies.size(); i++) {
 				enemies.get(i).paint();
+				enemies.get(i).move(world.getMatrix());
 				//System.out.println(enemies.get(i));
 			}
 		}
