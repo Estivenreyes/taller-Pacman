@@ -60,6 +60,7 @@ public class Knifeater {
 
 	public void setEat(boolean eat) {
 		this.eat = eat;
+
 	}
 	
 	

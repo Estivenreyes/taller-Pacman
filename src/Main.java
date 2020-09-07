@@ -14,11 +14,11 @@ public class Main extends PApplet{
 	
 	int screen;
 	int [][] matrix;
+	int Score;
 	World  world;
 	Knifeater knifeman;
 	
-	PImage Screen1, Screen2, Screen3, Screen4;
-	boolean paintScreen1, paintScreen2, paintScreen3, paintScreen4;
+	PImage Screen1, Screen2, Screen3, Screen4, rect;
 	String name;
 	ArrayList<Player> players = new ArrayList<Player>();
 	ArrayList<Enemy> enemies = new ArrayList<Enemy>();
@@ -35,6 +35,7 @@ public class Main extends PApplet{
 		Screen1 = loadImage("./data/Screen1.png");
 		Screen2 = loadImage("./data/Screen2.png");
 		Screen3 = loadImage("./data/Screen3.png");
+		rect = loadImage("./data/rect.png");
 		System.out.println(matrix);
 		name = "";
 		enemies.add(new Enemy1(420,420,4,4,this));
@@ -68,6 +69,8 @@ public class Main extends PApplet{
 			for(int i = 0; i < enemies.size(); i++) {
 				enemies.get(i).paint();
 				enemies.get(i).move(world.getMatrix());
+				image(rect,795,14);
+				Score();
 				//System.out.println(enemies.get(i));
 			}
 		}
@@ -75,6 +78,12 @@ public class Main extends PApplet{
 		
  	}
 	
+	void Score() {
+		fill(255);
+		text("Score",822,57);
+		
+	}
+
 	public void mousePressed() {
 		switch (screen) {
 		case 0:
