@@ -7,16 +7,12 @@ public class Knifeater {
 	private PImage knifeater;
 	private float poschX;
 	private float poschY;
-	private int dirX;
-	private int dirY;
 	private boolean eat;
 	private boolean mamadisimo;
 	
 	public Knifeater(float poschX, float poschY, PApplet app) {
 		this.poschX = poschX;
 		this.poschY = poschY;
-		this.dirX = 1;
-		this.dirY = 1;
 		this.eat = false;
 		this.mamadisimo = false;
 		this.app = app;
@@ -25,7 +21,6 @@ public class Knifeater {
 	}
 	
 	public void paint() {
-		app.fill(100,20,0);
 		app.image(knifeater,poschX,poschY);
 	}
 	

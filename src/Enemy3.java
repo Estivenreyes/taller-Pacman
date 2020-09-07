@@ -1,10 +1,20 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
-public class Enemy3 extends Enemies{
+public class Enemy3 extends Enemy{
 
-	public Enemy3(PApplet app, float poseX, float poseY, float speed, float dirX, float dirY, int kill) {
-		super(app, poseX, poseY, speed, dirX, dirY, kill);
-
+	private PImage enemie3;
+	
+	
+	public Enemy3 (int poseX, int poseY, int matX, int matY, PApplet app) {
+		super(poseX, poseY, matX, matY, app);
+		speed = 60;
+		
+	}
+	
+	public void paint() {
+		enemie3 = app.loadImage("./data/enemie3.png");
+		app.image(enemie3,poseX,poseY);
 	}
 
 }
